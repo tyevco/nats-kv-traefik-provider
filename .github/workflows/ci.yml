@@ -64,6 +64,8 @@ jobs:
       - name: Run yaegi test
         run: |
           GOPATH=$(mktemp -d)
+          mkdir -p "$GOPATH/src"
+          cp -r vendor/. "$GOPATH/src/"
           mkdir -p "$GOPATH/src/github.com/tyevco"
           ln -s "$GITHUB_WORKSPACE" "$GOPATH/src/github.com/tyevco/nats-kv-traefik-provider"
           cd "$GOPATH/src/github.com/tyevco/nats-kv-traefik-provider"
