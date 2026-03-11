@@ -69,4 +69,4 @@ jobs:
           mkdir -p "$GOPATH/src/github.com/tyevco"
           ln -s "$GITHUB_WORKSPACE" "$GOPATH/src/github.com/tyevco/nats-kv-traefik-provider"
           cd "$GOPATH/src/github.com/tyevco/nats-kv-traefik-provider"
-          GOPATH="$GOPATH" yaegi test .
+          GOPATH="$GOPATH" yaegi test -unsafe .
