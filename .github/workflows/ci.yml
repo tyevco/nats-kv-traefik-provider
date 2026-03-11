@@ -62,4 +62,8 @@ jobs:
         run: go install github.com/traefik/yaegi/cmd/yaegi@latest
 
       - name: Run yaegi test
-        run: yaegi test .
+        run: |
+          GOPATH="$(mktemp -d)"
+          ln -s "$(pwd)/vendor" "$GOPATH/src"
+          export GOPATH="$GOPATH:$(go env GOPATH)"
+          yaegi test .
