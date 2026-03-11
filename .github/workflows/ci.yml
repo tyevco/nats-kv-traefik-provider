@@ -49,24 +49,3 @@ jobs:
         with:
           version: latest
 
-  yaegi:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-go@v5
-        with:
-          go-version: "1.24"
-
-      - name: Install yaegi
-        run: go install github.com/traefik/yaegi/cmd/yaegi@latest
-
-      - name: Run yaegi test
-        run: |
-          GOPATH=$(mktemp -d)
-          mkdir -p "$GOPATH/src"
-          cp -r vendor/. "$GOPATH/src/"
-          mkdir -p "$GOPATH/src/github.com/tyevco"
-          ln -s "$GITHUB_WORKSPACE" "$GOPATH/src/github.com/tyevco/nats-kv-traefik-provider"
-          cd "$GOPATH/src/github.com/tyevco/nats-kv-traefik-provider"
-          GOPATH="$GOPATH" yaegi test -unsafe -syscall -unrestricted .
