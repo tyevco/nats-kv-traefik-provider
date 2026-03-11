@@ -17,6 +17,7 @@ package natskvprovider
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"log"
 	"strings"
@@ -217,7 +218,7 @@ func (p *Provider) buildConfiguration() (*dynamic.Configuration, error) {
 	keys, err := kv.Keys()
 	if err != nil {
 		// nats.ErrNoKeysFound means bucket is empty — return empty config.
-		if err == nats.ErrNoKeysFound {
+		if errors.Is(err, nats.ErrNoKeysFound) {
 			return emptyConfiguration(), nil
 		}
 		return nil, fmt.Errorf("failed to list keys: %w", err)

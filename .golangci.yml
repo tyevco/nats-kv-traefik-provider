@@ -52,6 +52,10 @@ linters:
     - gomnd
     - forbidigo
     - varnamelen
+    - depguard # plugin requires third-party imports
+    - ireturn # interfaces from dependencies
+    - mnd # magic numbers acceptable in simple parsing
+    - perfsprint # readability over micro-optimization
 
 issues:
   exclude-use-default: false
