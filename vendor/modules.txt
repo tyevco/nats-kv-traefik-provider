@@ -1,0 +1,32 @@
+# github.com/klauspost/compress v1.17.9
+## explicit; go 1.20
+github.com/klauspost/compress/flate
+# github.com/nats-io/nats.go v1.39.1
+## explicit; go 1.22.0
+github.com/nats-io/nats.go
+github.com/nats-io/nats.go/encoders/builtin
+github.com/nats-io/nats.go/internal/parser
+github.com/nats-io/nats.go/util
+# github.com/nats-io/nkeys v0.4.9
+## explicit; go 1.20
+github.com/nats-io/nkeys
+# github.com/nats-io/nuid v1.0.1
+## explicit
+github.com/nats-io/nuid
+# github.com/traefik/genconf v0.5.2
+## explicit; go 1.19
+github.com/traefik/genconf/dynamic
+github.com/traefik/genconf/dynamic/tls
+github.com/traefik/genconf/dynamic/types
+# golang.org/x/crypto v0.31.0
+## explicit; go 1.20
+golang.org/x/crypto/blake2b
+golang.org/x/crypto/curve25519
+golang.org/x/crypto/internal/alias
+golang.org/x/crypto/internal/poly1305
+golang.org/x/crypto/nacl/box
+golang.org/x/crypto/nacl/secretbox
+golang.org/x/crypto/salsa20/salsa
+# golang.org/x/sys v0.28.0
+## explicit; go 1.18
+golang.org/x/sys/cpu

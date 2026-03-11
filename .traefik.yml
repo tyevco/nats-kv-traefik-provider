@@ -1,0 +1,11 @@
+displayName: NATS KV Provider
+type: provider
+
+import: github.com/tyevco/nats-kv-traefik-provider
+
+summary: A Traefik provider plugin that reads dynamic configuration from a NATS KV bucket.
+
+testData:
+  natsUrl: nats://localhost:4222
+  bucket: traefik
+  pollInterval: 5s

@@ -1,0 +1,66 @@
+run:
+  timeout: 3m
+
+linters-settings:
+  govet:
+    enable-all: true
+    disable:
+      - fieldalignment
+  gocyclo:
+    min-complexity: 12
+  goconst:
+    min-len: 5
+    min-occurrences: 4
+  misspell:
+    locale: US
+  funlen:
+    lines: -1
+    statements: 50
+  gofumpt:
+    extra-rules: true
+
+linters:
+  enable-all: true
+  disable:
+    - deadcode # deprecated
+    - exhaustivestruct # deprecated
+    - golint # deprecated
+    - ifshort # deprecated
+    - interfacer # deprecated
+    - maligned # deprecated
+    - nosnakecase # deprecated
+    - scopelint # deprecated
+    - structcheck # deprecated
+    - varcheck # deprecated
+    - sqlclosecheck # not relevant (SQL)
+    - rowserrcheck # not relevant (SQL)
+    - execinquery # not relevant (SQL)
+    - cyclop # duplicate of gocyclo
+    - bodyclose # too many false positives
+    - dupl
+    - testpackage
+    - tparallel
+    - paralleltest
+    - nlreturn
+    - wsl
+    - exhaustive
+    - exhaustruct
+    - goerr113
+    - wrapcheck
+    - noctx
+    - lll
+    - gomnd
+    - forbidigo
+    - varnamelen
+
+issues:
+  exclude-use-default: false
+  max-per-linter: 0
+  max-same-issues: 0
+  exclude: []
+  exclude-rules:
+    - path: (.+)_test.go
+      linters:
+        - goconst
+        - funlen
+        - godot
